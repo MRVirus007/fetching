@@ -8,11 +8,10 @@ import { IEmployee } from './employee';
 })
 export class EmployeeService {
 
-  private _url: "/assets/data/employees.json";
-
   constructor(private http: HttpClient) { }
 
   getEmployees(): Observable<IEmployee[]> {
-    return this.http.get<IEmployee[]>(this._url);
+    const url = "/assets/data/employees.json";
+    return this.http.get<IEmployee[]>(url);
   }
 }
